@@ -1,6 +1,6 @@
 # Grammar Gateway Basic
 
-### Unit 072 : 비교급(1)
+## Unit 072 : 비교급(1)
 
 '더 -한/-하게'라는 의미로 말할때 비교급을 사용
 
@@ -14,7 +14,7 @@
 비교급 + than - : ~보다 더 -한/-하게
 > Silver is cheaper than gold.
 
-### Unit 073 : 비교급(2)
+## Unit 073 : 비교급(2)
 
 `-er`을 붙일 때 주의해야할 단어
 
@@ -42,7 +42,7 @@
 |bad|worse|
 |far|farther|
 
-### Unit 074 : 최상급
+## Unit 074 : 최상급
 
 '가장 -한' 이라는 의미로 말할 때 최상급을 쓴다.
 
@@ -66,7 +66,7 @@
 |good|the best|
 |bad|the worst|
 
-### Unit 075 : as - as
+## Unit 075 : as - as
 
 as + 형용사/부사 + as
 
