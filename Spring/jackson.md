@@ -20,13 +20,14 @@ Java Object를 Json으로 파싱하는 것을 직렬화(serialize)라고 하며,
 
 ```java
 public class Person {
-	public String name;
-	
-	public Person() {}
+    public String name;
 
-	public Person(String name) {
-		this.name = name;
-	}
+    public Person() {
+    }
+
+    public Person(String name) {
+        this.name = name;
+    }
 }
 ```
 필드가 public 이라면 직렬화/역직렬화 대상이다.
@@ -36,18 +37,18 @@ public class Person {
 
 ```java
 public class Person {
-	private String name;
+    private String name;
+
+    public Person() {
+    }
 	
-	public Person() {
-	}
-	
-	public Person(String name) {
-		this.name = name;
-	}
-	
-	public String getName() {
-		return name;
-	}	
+    public Person(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }
 ```
 getter를 통해서 직렬화가 된다.
