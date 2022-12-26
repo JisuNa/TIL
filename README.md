@@ -12,6 +12,5 @@
 
 ## Kotlin
 
-
 ## English
 - [Grammar Gateway Basic](https://github.com/JisuNa/TIL/blob/main/English/Grammar%20Gateway%20Basic.md)
