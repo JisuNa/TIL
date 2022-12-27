@@ -8,6 +8,8 @@
 
 - [Inheritance and Composition](https://github.com/JisuNa/TIL/blob/main/OOP/Inheritance%20and%20Composition.md)
 
+- [Dependency](https://github.com/JisuNa/TIL/blob/main/OOP/Dependency.md)
+
 ## Database
 
 ## Java
