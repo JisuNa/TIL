@@ -1,4 +1,4 @@
-# 05 객체 지향 설계 5원칙 - SOLID
+다# 05 객체 지향 설계 5원칙 - SOLID
 
 SOLID는 결합도는 낮추고 응집도는 높이기 위해 객체 지향의 관점에서 재정립한 것이다.
 
@@ -18,7 +18,6 @@ Single Responsibility Principle
 
 **SRP 위배**
 ```java
-// 
 public class UserInfoEmailSender {
     private String userName;
     private String email;
