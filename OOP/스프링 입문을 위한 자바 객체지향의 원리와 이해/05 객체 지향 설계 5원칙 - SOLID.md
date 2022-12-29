@@ -14,10 +14,11 @@ SOLID는 결합도는 낮추고 응집도는 높이기 위해 객체 지향의 �
 
 Single Responsibility Principle
 
-각 객체나 클래스는 오직 하나의 책임만을 지게 해야 한다
+각 객체나 클래스는 오직 하나의 책임만을 지게 해야 한다.
 
+**SRP 위배**
 ```java
-// 단일 책임 원칙 위배
+// 
 public class UserInfoEmailSender {
     private String userName;
     private String email;
@@ -34,8 +35,10 @@ public class UserInfoEmailSender {
         // 이메일 전송 코드
     }
 }
+```
 
-// 단일 책임 원칙을 적용
+**SRP로 개선**
+```java
 public class UserInfo {
     private String userName;
     private String email;
@@ -66,7 +69,7 @@ Open Closed Principle
 
 인터페이스를 구현하거나, 추상 클래스를 상속받아 기능을 확장하는 방식을 사용하는 것이 좋다.
 
-**위반**
+**OCP 위배**
 ```java
 class PaymentProcessor {
     public void processPayment(Payment payment) {
@@ -81,7 +84,7 @@ class PaymentProcessor {
 }
 ```
 
-**개선**
+**OCP로 개선**
 ```java
 interface PaymentProcessor {
     void processPayment(Payment payment);
@@ -119,8 +122,8 @@ class BitcoinProcessor implements PaymentProcessor {
 
 범용 인터페이스 보다는 특정 인터페이스로 세분화하는게 좋다.
 
+**ISP 위배**
 ```java
-// ISP 위배
 public interface AllInOneDevice {
     void print();
     void copy();
@@ -165,6 +168,7 @@ public class PrinterMachine implements AllInOneDevice {
 
 인터페이스를 더 세분화 한다면 불필요한 코드를 줄일 수 있다.
 
+**ISP로 개선**
 ```java
 public interface PrinterDevice {
     void print();
