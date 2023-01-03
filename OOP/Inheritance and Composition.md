@@ -2,19 +2,12 @@
 
 ## 상속이란
 
-ㅇㅇ
-
-## 상속의 좋은 예시
-
-ㅇㅇ
+상속이란, 기존의 클래스를 재사용하여 새로운 클래스를 작성하는 것이다.
+재사용과 확장을 위해 상속을 사용한다.
 
 ## 상속의 단점
 
 '캡슐화'를 깨트리는 치명적인 단점이 있다. 상위클래스의 변수와 메소드가 하위클래스에게 노출 되기 때문이다. 이에 따라 하위클래스는 상위클래스에게 강하게 결합되고, 의존하게 되며 상위클래스의 내부구현이 달라지면, 수정사항이 없는 하위클래스가 오동작 할 수 있다.
-
-또한 리스코프 치환원칙에 위배된다.
-
-_왜?_
 
 ## Composition 이란
 
@@ -25,28 +18,38 @@ _왜?_
 ## 합성의 예시
 
 ```java
-public class Person {
-    public void eat() {
-        System.out.println("eat");
+interface Action {
+    void action();
+}
+
+class DefaultAction implements Action {
+    @Override
+    public void action() {
+        System.out.println("action");
     }
 }
 
-public class Actor {
-    private final Person person = new Person();
+class AClass {
+    private Action action;
 
-    public void eat() {
-    	person.eat();
+    public AClass(Action action) {
+        this.action = action;
+    }
+
+    public void action() {
+        this.action.action();
     }
 }
 
-public class Developer {
-    private final Action action = new Action();
+class BClass {
+    private Action action;
 
-    public void eat() {
-        person.eat();
+    public BClass(Action action) {
+        this.action = action;
+    }
+
+    public void action() {
+        this.action.action();
     }
 }
 ```
-
-Actor, Developer에 멤버변수로 Person을 참조 변수로 선언한다.
-
