@@ -16,6 +16,10 @@ Single Responsibility Principle
 
 각 객체나 클래스는 오직 하나의 책임만을 지게 해야 한다.
 
+모듈이 변경되어야할 이유는 한가지여야한다.
+
+같은 이유로 변하는 것들을 모아라. 다른 이유로 변경되는 항목을 분리해라.
+
 **SRP 위배**
 ```java
 public class UserInfoEmailSender {
