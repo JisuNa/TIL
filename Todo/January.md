@@ -13,7 +13,12 @@
 - 영어 3장 풀기
 
 ### 4일
-- RealMySQL 4장
+- ~~RealMySQL 4장~~
 - ~~Starlucks 멀티모듈 구성~~
-- 영어 3장 풀기
-- 
+- ~~영어 3장 풀기~~
+
+### 5일
+- RealMySQL 4장
+- Starlucks CI 구성
+  - github actions로 pr이 생성되고 commit이 push 될 때 마다 lint / test / build 를 하고 성공여부를 github에서 볼 수 있도록 구성
+  - lint (formatter) 구성 (google style)
