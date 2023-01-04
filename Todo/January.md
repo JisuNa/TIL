@@ -14,6 +14,6 @@
 
 ### 4일
 - RealMySQL 4장
-- Starlucks 멀티모듈 구성
+- ~~Starlucks 멀티모듈 구성~~
 - 영어 3장 풀기
 - 
