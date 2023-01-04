@@ -1,14 +1,14 @@
 # RealMySQL 8.0 1권
 
-## 01 소개
+# 01 소개
 
-### 1.2 왜 MySQL인가?
+## 1.2 왜 MySQL인가?
 자기가 가장 잘 활용할 수 있는 DBMS가 가장 좋은 DBMS이다.
 - 안정성
 - 성능과 기능
 - 커뮤니티나 인지도
 
-## 02 설치와 설정
+# 02 설치와 설정
 
 ### 2.1 MySQL 서버 설치
 
@@ -47,9 +47,9 @@ CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS        
 e5594d6ff60a   mysql     "docker-entrypoint.s…"   8 minutes ago   Up 8 minutes   33060/tcp, 0.0.0.0:3155->3306/tcp   mysql-test
 ```
 
-## 03 사용자 및 권한
+# 03 사용자 및 권한
 
-### 계정 생성
+## 계정 생성
 
 5.7 까지는 `GRANT` 명령으로 권한의 부여와 동시에 계정 생성이 가능했다.
 
@@ -147,9 +147,9 @@ GRANT SELECT, INSERT, UPDATE, DELETE ON employees.department.* TO 'user'@'localh
 GRANT SELECT, INSERT, UPDATE(dept_name) ON employees.department.* TO 'user'@'localhost';
 ```
 
-## 04 아키텍처
+# 04 아키텍처
 
-### MySQL 엔진 아키텍처
+## MySQL 엔진 아키텍처
 
 쿼리를 작성하고 튜닝할 때 엔진의 구조를 알아야한다.
 
@@ -272,4 +272,19 @@ InnoDB 스토리지 엔진은 데드락 감지 스레드를 가지고 있고 주
 
 언두로그 양이 적은 트랜잭션을 종료시키는데 트랜잭션 강제 롤백으로 인한 부하가 적기 때문
 
-### 4.2.7 InnoDB 버퍼 풀
+### InnoDB 버퍼 풀
+
+- InnoDB 스토리지 엔진에서 가장 핵심적인 부분이다. 
+- 디스크의 데이터 파일이나 인덱스 정보를 메모리에 캐시하는 공간 
+- 쓰기 작업을 지연시켜 일괄 작업으로 처리하는 버퍼 역할도 한다.
+- 데이터를 변경하는 쿼리를 버퍼 풀에 모아서 처리하면 디스크 작업 횟수도 줄어든다.
+
+### 버퍼 풀의 크기 설정
+
+- 5.7 부터 풀 크기 조절 가능
+- 운영체제 메모리 공간이 8GB 미만이면 50% 정도 설정
+- 50GB 이상이면 15~30GB 설정
+- 풀을 늘리는 작업은 시스템 영향도가 크지 않지만, 줄이는 작업은 매우 크다.
+- 128MB 단위로 단위로 설정
+
+~~중략..~~
