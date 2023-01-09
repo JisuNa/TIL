@@ -41,5 +41,8 @@
 ### 9일
 - ~~Starlucks checkstyle 적용~~
   - ~~google style~~
-- RealMySQL 5.4
-  - MySQL 격리 수준
+- ~~RealMySQL8.0 5.4장~~
+  - ~~MySQL 격리 수준~~
+
+### 10일
+- RealMySQL8.0 4.2.3 MVCC
