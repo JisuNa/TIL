@@ -524,3 +524,70 @@ UPDATE employees SET hire_date=NOW() WHERE first_name='Georgi' AND last_name='Kl
 8.0 부터는 `performance_schema`의 `data_locks`와 `data_lock_waits` 테이블에서 확인 가능하다. (`information_schema` 정보들은 조금씩 Deprecated 되고 있음)
 
 방법은 `REAL MySQL 8.0 1권` 173~176장을 참고하자.
+
+## MySQL의 격리 수준
+
+여러 트랜잭션이 동시에 처리될 때 특정 트랜잭션이 다른 트랜잭션에서 변경, 조회하는 데이터를 볼 수 있게 허용할지 말지 결정
+
+### 격리 수준
+- READ UNCOMMITTED
+- READ COMMITTED
+- REPEATABLE READ
+- SERIALIZABLE
+
+| -                | DIRTY READ | NON-REPEATABLE READ | PHANTOM READ |
+|------------------|------------|---------------------|--------------|
+| READ UNCOMMITTED | o          | o                   | o            |
+| READ COMMITTED   | x          | o                   | o            |
+| REPEATABLE READ  | x          | x                   | o(InnoDB는 x) |
+| SERIALIZABLE     | x          | x                   | x            |
+
+아래로 갈 수록 격리정도가 높아지며 동시 처리 성능도 떨어진다.
+
+### READ UNCOMMITTED
+
+![img.png](../images/READUNCOMMITTED.png)
+
+A 트랜잭션 처리가 완료되지 않았는데도 B 트랜잭션에서도 볼 수 있다. (Dirty Read)
+
+### READ COMMITTED
+
+오라클 DBMS의 기본 격리 수준
+
+![img.png](../images/READCOMMITTED.png)
+
+B의 SELECT 쿼리 결과는 employees 테이블이 아니라 언두 영역에 백업된 레코드에서 가져온 결과다.
+
+`READ COMMITTED`에서는 `NON-REPEATABLE READ`라는 부정합의 문제가 발생한다.
+
+![img.png](../images/READCOMMITTED-NONREPEATABLEREAD.png)
+
+동일한 트랜잭션에서 같은 조건으로 조회했는데 다른 결과가 나오는 현상으로 정합성에 어긋난다.
+
+일반적인 서비스에서는 큰 문제가 되지 않겠지만, 금전적인 처리와 연결되면 문제가 될 수 있다.
+
+### REPEATABLE READ
+
+MySQL의 InnoDB 스토리지 엔진의 기본 격리 수준
+
+`NON-REPEATABLE READ`이 발생하지 않는다.
+
+InnoDB는 트랜잭션이 `ROLLBACK`될 가능성에 대비해 변경 전 레코드를 언두 공간에 백업하고 실제 레코드 값을 변경한다. (MVCC 방식)
+
+사실 `READ COMMITTED`도 MVCC를 이용해 `COMMIT`되기 전 데이터를 보여준다.
+
+`REPEATABLE READ`와 `READ COMMITTED`의 차이는 언두 영역에 백업된 레코드의 여러 버전 중 n번째 이전까지 찾냐의 차이다.
+
+![img.png](../images/REPEATABLEREAD.png)
+
+트랜잭션을 시작하고 장시간 종료하지 않으면 언두 영역에 백업 데이터가 무한정으로 커질 수 있어 서버 성능 저하가 발생할 수 있다.
+
+`REPEATABLE READ`에서도 부정합이 발생하는 경우가 있다.
+
+![img.png](../images/PHANTOMREAD.png)
+
+B 트랜잭션이 `SELECT ... FOR UPDATE` 조회하고 A 트랜잭션에서 `INSERT`가 되고 종료한 다음 B 트랜잭션에서`SELECT ... FOR UPDATE` 한다면 결과값이 다른 상황이 발생한다.
+
+`SELECT ... FOR UPDATE`는 `SELECT`하는 레코드에 쓰기 잠금을 걸리지만 언두 레코드에는 잠금을 걸 수가 없어서 실제 테이블의 변경된 값을 가져오는 것이다.
+
+
