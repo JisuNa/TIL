@@ -256,13 +256,16 @@ SELECT * FROM member WHERE m_id=12;
 ```
 
 격리 수준이 `READ_UNCOMMITTED`인 경우 커밋이 됐거나 안됐거나 InnoDB 버퍼풀이나 데이터 파일로부터 변경되지 않은 데이터를 읽어서 반환한다.
-`READ_COMMITTED` 이상의 격리 수준인 경우에는 커밋되기 전의 내용을 보관하고 있는 언두영역의 데이터를 반환한다.
+
+`READ_COMMITTED` 이상의 격리 수준인 경우에는 커밋되기 전의 내용을 보관하고 있는 **언두영역의 데이터를 반환**한다.
 
 ### 잠금 없는 일관된 읽기 (Non-Locking Consistent READ)
 
-InnoDB에서 읽기 작업은 다른 트랙잭션이 가지고 있는 잠금을 기다리지 않고 읽기 작업이 가능
+`InnoDB 스토리지 엔진은`은 MVCC를 이용해 다른 트랙잭션이 가지고 있는 잠금을 기다리지 않고 읽기 작업이 가능
 
-격리 수준이 `SERIALIZABLE`이 아니고 `INSERT`와 연결되지 않은 순수한 읽기 작업은 다른 트랜잭션과 관계없이 바로 실행된다.
+`READ UNCOMMITTED` `READ COMMITTED` `REPEATABLE READ`일 때 `INSERT`와 연결되지 않은 순수한 읽기 작업은 다른 트랜잭션과 관계없이 바로 실행된다.
+
+즉 언두 영역의 데이터를 반환하여 `PHANTOM READ` 현상이 발생하지 않는다.
 
 ### 자동 데드락 감지
 
@@ -590,4 +593,4 @@ B 트랜잭션이 `SELECT ... FOR UPDATE` 조회하고 A 트랜잭션에서 `INS
 
 `SELECT ... FOR UPDATE`는 `SELECT`하는 레코드에 쓰기 잠금을 걸리지만 언두 레코드에는 잠금을 걸 수가 없어서 실제 테이블의 변경된 값을 가져오는 것이다.
 
-
+# 06 데이터 압축
