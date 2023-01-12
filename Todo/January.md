@@ -50,6 +50,11 @@
 - ~~면접 질문 리스트 정리~~
 
 ### 11일
-- RealMySQL8.0 6,7장
+- ~~RealMySQL8.0 6,7장~~
+- Starlucks main 모듈 및 모듈 구성
+- ~~면접 질문 리스트 정리~~
+
+### 12일
+- RealMySQL8.0 8장
 - Starlucks main 모듈 및 모듈 구성
 - 면접 질문 리스트 정리

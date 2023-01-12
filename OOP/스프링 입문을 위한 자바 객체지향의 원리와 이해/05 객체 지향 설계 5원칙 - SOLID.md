@@ -21,8 +21,10 @@ Single Responsibility Principle
 같은 이유로 변하는 것들을 모아라. 다른 이유로 변경되는 항목을 분리해라.
 
 **SRP 위배**
+
 ```java
 public class UserInfoEmailSender {
+
     private String userName;
     private String email;
 
@@ -41,8 +43,10 @@ public class UserInfoEmailSender {
 ```
 
 **SRP로 개선**
+
 ```java
 public class UserInfo {
+
     private String userName;
     private String email;
 
@@ -56,6 +60,7 @@ public class UserInfo {
 }
 
 public class EmailSender {
+
     public void sendEmail(String email) {
         // 이메일 전송 코드
     }
@@ -73,8 +78,10 @@ Open Closed Principle
 인터페이스를 구현하거나, 추상 클래스를 상속받아 기능을 확장하는 방식을 사용하는 것이 좋다.
 
 **OCP 위배**
+
 ```java
 class PaymentProcessor {
+
     public void processPayment(Payment payment) {
         if (payment.getType() == PaymentType.CREDIT_CARD) {
             // process credit card payment
@@ -88,32 +95,39 @@ class PaymentProcessor {
 ```
 
 **OCP로 개선**
+
 ```java
 interface PaymentProcessor {
+
     void processPayment(Payment payment);
 }
 
 class CreditCardProcessor implements PaymentProcessor {
+
     public void processPayment(Payment payment) {
         // process credit card payment
     }
 }
 
 class PayPalProcessor implements PaymentProcessor {
+
     public void processPayment(Payment payment) {
         // process PayPal payment
     }
 }
 
 class BitcoinProcessor implements PaymentProcessor {
+
     public void processPayment(Payment payment) {
         // process bitcoin payment
     }
 }
 ```
+
 ## LSP 리스코프 치환 원칙
 
 서브 타입은 언제나 자신의 기반 타입으로 교체할 수 있어야 한다.
+
 - 하위 클래스 is a kind of 상위 클래스 - 하위 분류는 상위 분류의 한 종류다.
 - 구현 클래스 is able to 인터페이스 - 구현 분류는 인터페이스할 수 있어야 한다.
 
@@ -126,14 +140,19 @@ class BitcoinProcessor implements PaymentProcessor {
 범용 인터페이스 보다는 특정 인터페이스로 세분화하는게 좋다.
 
 **ISP 위배**
+
 ```java
 public interface AllInOneDevice {
+
     void print();
+
     void copy();
+
     void fax();
 }
 
 public class SmartMachine implements AllInOneDevice {
+
     @Override
     public void print() {
         System.out.println("print");
@@ -151,6 +170,7 @@ public class SmartMachine implements AllInOneDevice {
 }
 
 public class PrinterMachine implements AllInOneDevice {
+
     @Override
     public void print() {
         System.out.println("print");
@@ -167,25 +187,31 @@ public class PrinterMachine implements AllInOneDevice {
     }
 }
 ```
+
 위 코드를 보면 `PrinterMachine`은 `AllInOneDevice` 인터페이스의 구현을 강제하기 때문에 사용할 수 없는 `copy`와 `fax`를 못하게 막고 있다.
 
 인터페이스를 더 세분화 한다면 불필요한 코드를 줄일 수 있다.
 
 **ISP로 개선**
+
 ```java
 public interface PrinterDevice {
+
     void print();
 }
 
 public interface CopyDevice {
+
     void copy();
 }
 
 public interface FaxDevice {
+
     void fax();
 }
 
 public class SmartMachine implements PrinterDevice, CopyDevice, FaxDevice {
+
     @Override
     public void print() {
         System.out.println("print");
@@ -203,6 +229,7 @@ public class SmartMachine implements PrinterDevice, CopyDevice, FaxDevice {
 }
 
 public class PrinterMachine implements PrinterDevice {
+
     @Override
     public void print() {
         System.out.println("print");
