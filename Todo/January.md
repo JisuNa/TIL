@@ -76,5 +76,9 @@
 - ~~Starlucks Component scan 안되는 원인 찾기~~
 
 ### 18일
-- Lock 종류 익히기
+- ~~SharedLock & ExclusiveLock 정일~~
 - 데드락이 발생하는 케이스 확인
+
+### 19일
+- 데드락이 발생하는 케이스 확인
+- starlucks 프로젝트
