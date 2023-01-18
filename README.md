@@ -13,6 +13,7 @@
 ## Database
 
 - [Real MySQL 8.0 1권](https://github.com/JisuNa/TIL/blob/main/Database/RealMySQL8.0-1.md)
+- [Shared Lock & Exclusive Lock](https://github.com/JisuNa/TIL/blob/main/Database/SharedLockExclusiveLock.md)
 
 ## Java
 
