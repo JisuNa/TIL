@@ -72,5 +72,9 @@
 - ~~면접 질문 리스트 정리~~
 
 ### 17일
-- Do it 알고리즘 3장
-- Starlucks Component scan 안되는 원인 찾기
+- ~~Do it 알고리즘 3장~~
+- ~~Starlucks Component scan 안되는 원인 찾기~~
+
+### 18일
+- Lock 종류 익히기
+- 데드락이 발생하는 케이스 확인
