@@ -81,5 +81,24 @@
 
 ### 19일
 - ~~데드락이 발생하는 케이스 확인~~
-- Full text search
+- ~~Full text search~~
 - starlucks 프로젝트
+
+### 20일
+- ~~Full text search index~~
+- ~~starlucks 프로젝트~~
+
+### 21일
+
+### 22일
+- ~~Starlucks 프로젝트~~
+
+### 23일
+- ~~Starlucks 프로젝트~~
+
+### 24일
+- 인프런 스프링 기본
+- 알고리즘 도감
+
+### 25일
+- Full text search index 마무리
