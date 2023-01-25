@@ -102,5 +102,10 @@
 
 ### 25일
 - ~~알고리즘 도감 2장~~
-- Full text search index 마무리
+- ~~Full text search index 마무리~~
 - 인프런 스프링
+
+### 26일
+- 이력서 갱신
+- 인프런 스프링
+- MySQL 인덱스

@@ -90,7 +90,7 @@ SELECT * FROM member WHERE MATCH(description) AGAINST('+서울 -제주' IN BOOLE
 select *, match(description) AGAINST('hu' IN NATURAL LANGUAGE MODE) as score from starlucks.member where match(description) AGAINST('kpuhw' IN NATURAL LANGUAGE MODE)
 53159 rows retrieved starting from 1 in 562 ms (execution: 529 ms, fetching: 33 ms)
 
-select *, match(description) AGAINST('kpuhw' IN NATURAL LANGUAGE MODE) as score from starlucks.member where match(description) AGAINST('kpuhw' IN BOOLEAN MODE)
+select *, match(description) AGAINST('kpuhw' IN BOOLEAN MODE) as score from starlucks.member where match(description) AGAINST('kpuhw' IN BOOLEAN MODE)
 107 rows retrieved starting from 1 in 831 ms (execution: 820 ms, fetching: 11 ms)
 ```
 
