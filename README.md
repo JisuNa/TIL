@@ -14,6 +14,9 @@
 
 - [Real MySQL 8.0 1권](https://github.com/JisuNa/TIL/blob/main/Database/RealMySQL8.0-1.md)
 - [Shared Lock & Exclusive Lock](https://github.com/JisuNa/TIL/blob/main/Database/SharedLockExclusiveLock.md)
+- [Index](https://github.com/JisuNa/TIL/blob/main/Database/Index.md)
+- [Full text search index](https://github.com/JisuNa/TIL/blob/main/Database/Full-text-search-index.md)
+- [Like search](https://github.com/JisuNa/TIL/blob/main/Database/Like-search.md)
 
 ## Java
 
