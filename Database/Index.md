@@ -3,7 +3,10 @@
 시작하기에 앞서 인덱스를 사용하는 이유를 알아보겠습니다.
 
 ```sql
-explain select * from tb_order where order_name = '토피넛라떼';
+explain
+select *
+from tb_order
+where order_name = '토피넛라떼';
 
 +----+-------------+----------+------------+------+---------------+------+---------+------+------+----------+-------------+
 | id | select_type | table    | partitions | type | possible_keys | key  | key_len | ref  | rows | filtered | Extra       |
@@ -15,7 +18,10 @@ explain select * from tb_order where order_name = '토피넛라떼';
 ```sql
 create index tb_order_idx01 on `tb_order` (order_name);
 
-explain select * from tb_order where order_name = '토피넛라떼';
+explain
+select *
+from tb_order
+where order_name = '토피넛라떼';
 
 +----+-------------+----------+------------+------+----------------+----------------+---------+-------+------+----------+-------+
 | id | select_type | table    | partitions | type | possible_keys  | key            | key_len | ref   | rows | filtered | Extra |
@@ -34,9 +40,9 @@ explain select * from tb_order where order_name = '토피넛라떼';
 
 인덱스를 걸지 않았을 경우에는 Table Full Scan으로 조회를 하는 반면에, 인덱스를 걸었을 경우 ref 타입으로 인덱스를 사용하여 조회하는 것을 알 수 있습니다.
 
-
-
 DBMS의 인덱스의 자료구조는 `SortedList`이며, 데이터 저장은 `ArrayList`를 사용합니다.
+
+## `ArrayList` vs `SortedList`
 
 ### `ArrayList`
 
@@ -50,4 +56,10 @@ DBMS의 인덱스의 자료구조는 `SortedList`이며, 데이터 저장은 `Ar
 - 저장할 때마다 항상 값을 정렬해서 과정이 복잡하고 느림
 - 정렬되어 있어 아주 빨리 원하는 값을 찾을 수 있음
 - 인덱스가 많은 테이블은 `INSERT`, `UPDATE`, `DELETE`가 느리지만 `SELECT`는 빠름
+
+## B-Tree
+
+- Balanced Tree로 좌우 균형을 맞춘 트리
+- 검색/삽입/삭제 모두 O(logN)
+
 
