@@ -36,11 +36,7 @@
 - 행 기준으로 Lock
 - DML(SELECT, INSERT, UPDATE, DELETE) 구문 사용시 Lock 됨
 
-## Shared Lock & Exclusive Lock
-
-해당 문서에서 설명하는 Lock 메커니즘은 MySQL InnoDB를 기준으로 작성되었습니다.
-
-### Shared Lock
+## Shared Lock
 
 `Shared Lock`은 S Lock, Read Lock 이라고도 한다.
 
@@ -54,11 +50,11 @@ S Lock을 사용하면 조회한 데이터가 트랜잭션 내내 변경되지 �
 -- 8.0
 select * from table_name where id = 1 for share;
 
--- 5.8
+-- 5.8 이하
 select * from table_name where id = 1 lock in share mode;
 ```
 
-### Exclusive Lock
+## Exclusive Lock
 
 Exclusive Lock은 Write Lock 또는 X Lock 이라고도 한다.
 
@@ -71,6 +67,24 @@ X Lock을 획득한 트랜잭션은 `SELECT` `INSERT` `UPDATE` `DELETE`을 사�
 ```sql
 select * from table_name where id = 1 for update;
 ```
+
+## Intent Lock
+
+내재 락은 사용자가 요청한 범위에 대한 락을 걸 수 있는지 빠르게 파악하기 위해 사용되는 락이다.
+
+IS, IX, SIX 등이 있다.
+
+## Blocking
+
+블로킹은 Lock 경합이 발생하여 특성 세션이 작업을 진행하지 못하고 멈춰 선 상태
+
+S Lock 간에는 블로킹이 발생하지 않지만 S 락과 X 락, X과 X락 간에는 블로킹이 발생한다. 
+
+## 주의사항
+
+- 트랜잭션의 길이가 너무 길면 경합 확률이 높아진다.
+- 트랜잭션 격리 레벨을 불필요하게 상향 조정하지 않는다.
+- 쿼리 시간이 길어지지 않게 적절한 튜닝이 필요.
 
 ## in JPA..
 
