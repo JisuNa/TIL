@@ -14,7 +14,7 @@
 - [Like search](https://github.com/JisuNa/TIL/blob/main/Database/Like-search.md)
 - [Full text search index](https://github.com/JisuNa/TIL/blob/main/Database/Full-text-search-index.md)
 - [Index](https://github.com/JisuNa/TIL/blob/main/Database/Index.md)
-- [Shared Lock & Exclusive Lock](https://github.com/JisuNa/TIL/blob/main/Database/SharedLockExclusiveLock.md)
+- [Lock](https://github.com/JisuNa/TIL/blob/main/Database/Lock.md)
 
 ## Java
 

@@ -3,6 +3,5 @@
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/Database/Full-text-search-index.md" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/Database/Lock.md" dialect="GenericSQL" />
-    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/1b2b3678-ff84-4656-bee7-6a06dfbba5bf/console.sql" dialect="MySQL" />
   </component>
 </project>
