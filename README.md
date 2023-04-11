@@ -18,6 +18,8 @@
 
 ## Java
 
+- [Serializable](https://github.com/JisuNa/TIL/blob/main/Java/Serializable.md)
+
 ## Kotlin
 
 ## Git
