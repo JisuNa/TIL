@@ -26,7 +26,7 @@
 
 ## Git
 
-## NETWORK
+## Network
 
 ### HTTP
 

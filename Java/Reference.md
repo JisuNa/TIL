@@ -1,5 +1,7 @@
 # Reference
 
+## Overview
+
 JDK 1.2 부터는 java.lang.ref 패키지를 추가해 제한적으로 사용자 코드와 GC가 상호작용할 수 있게 했습니다.
 
 java.lang.ref 패키지는 전형적인 객체 참조인 strong reference 외에도 soft, weak, phantom 3가지의 새로운 참조 방식을 Reference 클래스로 제공합니다.
@@ -54,7 +56,7 @@ Soft Reference 객체로만 참조된 객체는 힙에 남아 있는 메모리�
 
 Phantom Reference 는 거의 사용되지 않습니다.
 
-# Conclusion
+## Conclusion
 
 GC는 GC 대상 객체(Garbage)를 찾고, 대상 객체를 처리(finalization)하고, 메모리를 회수합니다.
 
