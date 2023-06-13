@@ -15,6 +15,7 @@
 - [Full text search index](https://github.com/JisuNa/TIL/blob/main/Database/Full-text-search-index.md)
 - [Index](https://github.com/JisuNa/TIL/blob/main/Database/Index.md)
 - [Lock](https://github.com/JisuNa/TIL/blob/main/Database/Lock.md)
+- [Optimistic Lock](https://github.com/JisuNa/optimistic-lock#readme)
 
 ## Java
 
