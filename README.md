@@ -33,5 +33,9 @@
 
 - [USER-AGENT](https://github.com/JisuNa/TIL/blob/main/Network/HTTP/UserAgent.md)
 
+## Trouble Shooting
+
+- [Kotlin entity all open]()
+
 ## English
 - [Grammar Gateway Basic](https://github.com/JisuNa/TIL/blob/main/English/Grammar%20Gateway%20Basic.md)
