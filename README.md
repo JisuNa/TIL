@@ -1,9 +1,12 @@
 # Today I Learned
 
 ## Spring
+
+- [Circuit Breaker](https://github.com/JisuNa/TIL/blob/main/Spring/CircuitBreaker.md)
 - [Jackson](https://github.com/JisuNa/TIL/blob/main/Spring/jackson.md)
 
 ## OOP
+
 - [스프링 입문을 위한 자바 객체지향의 원리와 이해](https://github.com/JisuNa/TIL/tree/main/OOP/%EC%8A%A4%ED%94%84%EB%A7%81%20%EC%9E%85%EB%AC%B8%EC%9D%84%20%EC%9C%84%ED%95%9C%20%EC%9E%90%EB%B0%94%20%EA%B0%9D%EC%B2%B4%EC%A7%80%ED%96%A5%EC%9D%98%20%EC%9B%90%EB%A6%AC%EC%99%80%20%EC%9D%B4%ED%95%B4)
 - [Inheritance and Composition](https://github.com/JisuNa/TIL/blob/main/OOP/Inheritance%20and%20Composition.md)
 - [Dependency](https://github.com/JisuNa/TIL/blob/main/OOP/Dependency.md)
@@ -25,17 +28,19 @@
 
 ## Kotlin
 
-## Git
-
 ## Network
 
 ### HTTP
 
 - [USER-AGENT](https://github.com/JisuNa/TIL/blob/main/Network/HTTP/UserAgent.md)
 
+## Kafka
+
+- [실전 카프카 개발부터 운영까지](https://github.com/JisuNa/TIL/tree/main/kafka/%EC%8B%A4%EC%A0%84%20%EC%B9%B4%ED%94%84%EC%B9%B4%20%EA%B0%9C%EB%B0%9C%EB%B6%80%ED%84%B0%20%EC%9A%B4%EC%98%81%EA%B9%8C%EC%A7%80)
+
 ## Trouble Shooting
 
-- [Kotlin entity all open]()
+- [Kotlin entity all open](https://github.com/JisuNa/optimistic-lock)
 
 ## English
 - [Grammar Gateway Basic](https://github.com/JisuNa/TIL/blob/main/English/Grammar%20Gateway%20Basic.md)
