@@ -28,7 +28,7 @@
 
 ## Kotlin
 
-- Kotlin coroutine
+- [2시간으로 끝내는 코루틴](https://github.com/JisuNa/TIL/blob/main/Kotlin/coroutine/%EC%BD%94%EB%A3%A8%ED%8B%B4.md)
 
 ## Kafka
 
